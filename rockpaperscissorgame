@@ -1,0 +1,51 @@
+#include <iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main() {
+    cout<<"Welcome to the rock paper scissor"<<endl;
+    cout<<"enter the number for selecting"<<endl;
+    srand(time(0));
+    int playerchoice;
+    bool draw=false;
+    do{
+        cout<<"\nenter 1 for rock";
+        cout<<"\nenter 2 for scissor";
+        cout<<"\nenter 3 for paper";
+        cout<<"\n\nenter the number: ";
+        cin>>playerchoice;
+        cout<<endl;
+        int aichoice=1+(rand()%3);
+        cout<<"aichoice is: "<<aichoice;
+        draw=false;
+        if(playerchoice==1 && aichoice==2){
+            cout<<"\n\nrock beats scissor";
+            cout<<"\nYou win";
+        }
+        else if(playerchoice==2 && aichoice==1){
+            cout<<"\n\nrock beats scissor";
+            cout<<"\nYou lose";
+        }
+        else if(playerchoice==1 && aichoice==3){
+            cout<<"\n\npaper beats scissor";
+            cout<<"\nYou lose";
+        }
+        else if(playerchoice==3 && aichoice==1){
+            cout<<"\n\npaper beats scissor";
+            cout<<"\nYou win";
+        }
+        else if(playerchoice==2 && aichoice==3){
+            cout<<"\n\nscissor beats paper";
+            cout<<"\nYou won";
+        }
+        else if(playerchoice==3 && aichoice==2){
+            cout<<"\n\nscissor beats paper";
+            cout<<"\nYou lose";
+        }
+        else{
+            cout<<"\n\nits draw";
+            cout<<"\n play again";
+            draw=true;
+        }
+    }while(draw);
+    return 0;
